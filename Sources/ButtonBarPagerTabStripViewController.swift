@@ -159,12 +159,13 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         buttonBarView.selectedBarVerticalAlignment = settings.style.selectedBarVerticalAlignment
 
         // register button bar item cell
-        switch buttonBarItemSpec! {
-        case .nibFile(let nibName, let bundle, _):
-            buttonBarView.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier:"Cell")
-        case .cellClass:
-            buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"Cell")
-        }
+//         switch buttonBarItemSpec! {
+//         case .nibFile(let nibName, let bundle, _):
+//             buttonBarView.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier:"Cell")
+//         case .cellClass:
+//             buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"Cell")
+//         }
+        buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"Cell")
         //-
     }
 
