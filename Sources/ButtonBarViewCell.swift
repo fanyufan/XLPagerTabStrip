@@ -29,7 +29,11 @@ open class ButtonBarViewCell: UICollectionViewCell {
 
     @IBOutlet open var imageView: UIImageView!
     @IBOutlet open var label: UILabel!
-
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
