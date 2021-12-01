@@ -27,11 +27,15 @@ import Foundation
 
 open class ButtonBarViewCell: UICollectionViewCell {
 
-    @IBOutlet open var imageView: UIImageView!
-    @IBOutlet open var label: UILabel!
+//     @IBOutlet open var imageView: UIImageView!
+//     @IBOutlet open var label: UILabel!
     
+    var label : UILabel = UILabel()
+    var imageView: UIImageView = UIImageView()
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubview(label)
+        addSubview(imageView)
     }
     
     public required init?(coder aDecoder: NSCoder) {
