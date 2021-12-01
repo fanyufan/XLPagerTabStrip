@@ -109,7 +109,7 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
             }
         }
         
-        buttonBarItemSpec = .nibFile(nibName: "ButtonCell", bundle: nil, width: { [weak self] (childItemInfo) -> CGFloat in
+        buttonBarItemSpec = .nibFile(nibName: "ButtonCell", bundle: bundle, width: { [weak self] (childItemInfo) -> CGFloat in
                 let label = UILabel()
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = self?.settings.style.buttonBarItemFont
@@ -159,13 +159,12 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         buttonBarView.selectedBarVerticalAlignment = settings.style.selectedBarVerticalAlignment
 
         // register button bar item cell
-//         switch buttonBarItemSpec! {
-//         case .nibFile(let nibName, let bundle, _):
-//             buttonBarView.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier:"Cell")
-//         case .cellClass:
-//             buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"Cell")
-//         }
-        buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"Cell")
+        switch buttonBarItemSpec! {
+        case .nibFile(let nibName, let bundle, _):
+            buttonBarView.register(UINib(nibName: nibName, bundle: bundle), forCellWithReuseIdentifier:"Cell")
+        case .cellClass:
+            buttonBarView.register(ButtonBarViewCell.self, forCellWithReuseIdentifier:"Cell")
+        }
         //-
     }
 
