@@ -22,7 +22,7 @@ let package = Package(
             dependencies: ["FXPageControl"],
             path: "Sources",
             resources: [
-                .process("ButtonCell.xib")
+                .copy("ButtonCell.xib")
             ]
         )
     ]
