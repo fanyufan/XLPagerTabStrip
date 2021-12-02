@@ -32,11 +32,10 @@ open class ButtonBarViewCell: UICollectionViewCell {
     
 //     var label : UILabel = UILabel()
 //     var imageView: UIImageView = UIImageView()
-//     override init(frame: CGRect) {
-//         super.init(frame: frame)
-//         addSubview(label)
-//         addSubview(imageView)
-//     }
+     override init(frame: CGRect) {
+         super.init(frame: frame)
+         
+     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
